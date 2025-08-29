@@ -28,7 +28,7 @@ public class Gliacoder_php {
 
         try {
             JSch jsch = new JSch();
-            com.jcraft.jsch.Session session = jsch.getSession(username, vmIpAddress, 22);
+            Session session = jsch.getSession(username, vmIpAddress, 22);
             session.setPassword(password);
             session.setConfig("StrictHostKeyChecking", "no");
             session.connect();
@@ -68,7 +68,6 @@ public class Gliacoder_php {
     public void sendEmailAlert(String messageBody) {
         String from = "automationsoftware25@gmail.com";
         String to = "gayathri@htic.iitm.ac.in";
-       // String cc = "";
         String subject = "Docker Container Alert - Apollo2 LiveWeb";
         final String username = "automationsoftware25@gmail.com";
         final String password = "wjzcgaramsqvagxu"; // App-specific password
@@ -79,7 +78,7 @@ public class Gliacoder_php {
         props.put("mail.smtp.host", "smtp.gmail.com");
         props.put("mail.smtp.port", "587");
 
-        jakarta.mail.Session mailSession = jakarta.mail.Session.getInstance(props, new Authenticator() {
+        Session mailSession = Session.getInstance(props, new Authenticator() {
             protected PasswordAuthentication getPasswordAuthentication() {
                 return new PasswordAuthentication(username, password);
             }
@@ -89,7 +88,6 @@ public class Gliacoder_php {
             Message message = new MimeMessage(mailSession);
             message.setFrom(new InternetAddress(from, "Docker Monitor"));
             message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(to));
-           // message.setRecipients(Message.RecipientType.CC, InternetAddress.parse(cc));
             message.setSubject(subject);
             message.setText(messageBody);
 
@@ -99,5 +97,4 @@ public class Gliacoder_php {
             e.printStackTrace();
         }
     }
-
 }
