@@ -82,7 +82,7 @@ public class Gliacoder_php {
             "gayathri@htic.iitm.ac.in"
         };
 
-        String subject = "Docker Container Alert - Apollo2 LiveWeb";
+        String subject = "Docker Container Alert - Gliacoder_php";
         final String username = "automationsoftware25@gmail.com";
         final String password = "wjzcgaramsqvagxu"; // App-specific password
 
@@ -122,4 +122,5 @@ public class Gliacoder_php {
         }
     }
 }
+
 
