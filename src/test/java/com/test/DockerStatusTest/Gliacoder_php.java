@@ -67,8 +67,22 @@ public class Gliacoder_php {
 
     public void sendEmailAlert(String messageBody) {
         String from = "automationsoftware25@gmail.com";
-        String[] to = {"nitheshkumarsundhar@gmail.com", "ramanan@htic.iitm.ac.in";
-        String[] cc = { "nathan.i@htic.iitm.ac.in", "divya.d@htic.iitm.ac.in", "venip@htic.iitm.ac.in", "meena@htic.iitm.ac.in", "nitheshkumarsundhar@gmail.com"};
+
+        // TO recipients
+        String[] to = {
+            "nitheshkumarsundhar@gmail.com",
+            "ramanan@htic.iitm.ac.in"
+        };
+
+        // CC recipients
+        String[] cc = {
+            "nathan.i@htic.iitm.ac.in",
+            "divya.d@htic.iitm.ac.in",
+            "venip@htic.iitm.ac.in",
+            "meena@htic.iitm.ac.in",
+            "nitheshkumarsundhar@gmail.com"
+        };
+
         String subject = "Docker Container Alert - Apollo2 LiveWeb";
         final String username = "automationsoftware25@gmail.com";
         final String password = "wjzcgaramsqvagxu"; // App-specific password
@@ -88,7 +102,17 @@ public class Gliacoder_php {
         try {
             Message message = new MimeMessage(mailSession);
             message.setFrom(new InternetAddress(from, "Docker Monitor"));
-            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(to));
+
+            // Convert arrays to comma-separated strings
+            message.setRecipients(
+                Message.RecipientType.TO,
+                InternetAddress.parse(String.join(",", to))
+            );
+            message.setRecipients(
+                Message.RecipientType.CC,
+                InternetAddress.parse(String.join(",", cc))
+            );
+
             message.setSubject(subject);
             message.setText(messageBody);
 
@@ -99,4 +123,3 @@ public class Gliacoder_php {
         }
     }
 }
-
