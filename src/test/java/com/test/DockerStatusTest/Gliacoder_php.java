@@ -1,8 +1,8 @@
 package com.test.DockerStatusTest;
 
 import com.jcraft.jsch.*;
-import jakarta.mail.*;
-import jakarta.mail.internet.*;
+import javax.mail.*;
+import javax.mail.internet.*;
 import org.testng.annotations.Test;
 
 import java.io.BufferedReader;
@@ -99,4 +99,5 @@ public class Gliacoder_php {
             e.printStackTrace();
         }
     }
+
 }
