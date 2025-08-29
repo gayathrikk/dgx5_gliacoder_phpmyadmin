@@ -27,12 +27,11 @@ public class Gliacoder_php {
         }
 
         try {
-                            // For SSH
-                JSch jsch = new JSch();
-                com.jcraft.jsch.Session session = jsch.getSession(username, vmIpAddress, 22);
-                session.setPassword(password);
-                session.setConfig("StrictHostKeyChecking", "no");
-                session.connect();
+            JSch jsch = new JSch();
+            com.jcraft.jsch.Session session = jsch.getSession(username, vmIpAddress, 22);
+            session.setPassword(password);
+            session.setConfig("StrictHostKeyChecking", "no");
+            session.connect();
 
             // Execute the docker inspect command to check the container's status
             ChannelExec channel = (ChannelExec) session.openChannel("exec");
@@ -79,13 +78,9 @@ public class Gliacoder_php {
         props.put("mail.smtp.host", "smtp.gmail.com");
         props.put("mail.smtp.port", "587");
 
-     // For Email
         javax.mail.Session mailSession = javax.mail.Session.getInstance(props, new Authenticator() {
             protected PasswordAuthentication getPasswordAuthentication() {
                 return new PasswordAuthentication(username, password);
-    }
-});
-
             }
         });
 
@@ -103,4 +98,3 @@ public class Gliacoder_php {
         }
     }
 }
-
