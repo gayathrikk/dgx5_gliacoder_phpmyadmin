@@ -76,11 +76,10 @@ public class Gliacoder_php {
 
         // CC recipients
         String[] cc = {
-            "nathan.i@htic.iitm.ac.in",
             "divya.d@htic.iitm.ac.in",
             "venip@htic.iitm.ac.in",
             "meena@htic.iitm.ac.in",
-            "nitheshkumarsundhar@gmail.com"
+            "gayathri@htic.iitm.ac.in"
         };
 
         String subject = "Docker Container Alert - Apollo2 LiveWeb";
@@ -123,3 +122,4 @@ public class Gliacoder_php {
         }
     }
 }
+
