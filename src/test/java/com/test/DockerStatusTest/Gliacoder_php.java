@@ -67,7 +67,8 @@ public class Gliacoder_php {
 
     public void sendEmailAlert(String messageBody) {
         String from = "automationsoftware25@gmail.com";
-        String to = "gayathri@htic.iitm.ac.in";
+        String[] to = {"nitheshkumarsundhar@gmail.com", "ramanan@htic.iitm.ac.in";
+        String[] cc = { "nathan.i@htic.iitm.ac.in", "divya.d@htic.iitm.ac.in", "venip@htic.iitm.ac.in", "meena@htic.iitm.ac.in", "nitheshkumarsundhar@gmail.com"};
         String subject = "Docker Container Alert - Apollo2 LiveWeb";
         final String username = "automationsoftware25@gmail.com";
         final String password = "wjzcgaramsqvagxu"; // App-specific password
@@ -98,3 +99,4 @@ public class Gliacoder_php {
         }
     }
 }
+
